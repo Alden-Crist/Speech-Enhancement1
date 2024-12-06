@@ -23,7 +23,7 @@ parser.add_argument('--path_save_sound', default='/Users/alden/OneDrive/Desktop/
 
 
 #How much frame to create in data_creation mode
-parser.add_argument('--nb_samples', default=200, type=int)
+parser.add_argument('--nb_samples', default=40000, type=int)
 
 
 #Training from scratch or pre-trained weights
