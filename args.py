@@ -43,7 +43,8 @@ parser.add_argument('--batch_size', default=20, type=int)
 
 
 #Name of saved model to read
-parser.add_argument('--name_model', default='model_unet', type=str)
+parser.add_argument('--name_model', default='model_best', type=str)
+#parser.add_argument('--name_model', default='model_unet', type=str)
 
 
 #directory where read noisy sound to denoise (prediction mode)

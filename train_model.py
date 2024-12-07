@@ -1,13 +1,4 @@
-import matplotlib.pyplot as plt
-import numpy as np
-from scipy import stats
-from sklearn.model_selection import train_test_split
 
-from keras.src.callbacks import EarlyStopping
-from keras.src.callbacks import ModelCheckpoint
-#from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
-from model_unet import unet
-from data_tools import scaled_in, scaled_ou
 
 # def training(path_save_spectrogram, weights_path, name_model, training_from_scratch, epochs, batch_size):
 #     """ This function will read noisy voice and clean voice spectrograms created by data_creation mode,
@@ -77,7 +68,15 @@ from data_tools import scaled_in, scaled_ou
 
 ####################################################################################
 
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy import stats
+from sklearn.model_selection import train_test_split
 
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
+#from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
+from model_unet import unet
+from data_tools import scaled_in, scaled_ou
 
 def training(path_save_spectrogram, weights_path, name_model, training_from_scratch, epochs, batch_size):
     """ This function will read noisy voice and clean voice spectrograms created by data_creation mode,

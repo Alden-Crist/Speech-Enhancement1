@@ -108,6 +108,14 @@ def create_data(noise_dir, voice_dir, path_save_time_serie, path_save_sound, pat
     list_voice_files = remove_ds_store(list_voice_files)
     list_noise_files = remove_ds_store(list_noise_files)
 
+
+    nb_voice_files = len(list_voice_files)
+    nb_noise_files = len(list_noise_files)
+
+    
+    print(nb_voice_files)
+    print(nb_noise_files)
+
     noise = audio_files_to_numpy(noise_dir, list_noise_files, sample_rate,
                                  frame_length, hop_length_frame_noise, min_duration)
     voice = audio_files_to_numpy(voice_dir, list_voice_files,
