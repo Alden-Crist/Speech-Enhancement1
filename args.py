@@ -20,7 +20,6 @@ parser.add_argument('--path_save_time_serie', default='/Users/alden/OneDrive/Des
 
 parser.add_argument('--path_save_sound', default='/Users/alden/OneDrive/Desktop/Data/Train/sound/', type=str)  #edited the path //////////////////
 
-
 #How much frame to create in data_creation mode  edited previous it was 50
 parser.add_argument('--nb_samples', default=40000, type=int)
 
