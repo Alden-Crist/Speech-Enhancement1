@@ -1,9 +1,9 @@
 import numpy as np
 from tensorflow import keras
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import Input, Conv2D, LeakyReLU, MaxPooling2D, Dropout, concatenate, UpSampling2D
-from tensorflow.keras.optimizers import Adam
-from tensorflow.keras import backend
+from tensorflow.keras.models import Model # type: ignore
+from tensorflow.keras.layers import Input, Conv2D, LeakyReLU, MaxPooling2D, Dropout, concatenate, UpSampling2D  # type: ignore
+from tensorflow.keras.optimizers import Adam # type: ignore
+from tensorflow.keras import backend  # type: ignore
 import tensorflow as tf
 print(tf.__version__)
 
