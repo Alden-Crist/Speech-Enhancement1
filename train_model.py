@@ -73,7 +73,7 @@ import numpy as np
 from scipy import stats
 from sklearn.model_selection import train_test_split
 
-from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint  # type: ignore
 #from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 from model_unet import unet
 from data_tools import scaled_in, scaled_ou

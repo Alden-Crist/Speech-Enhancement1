@@ -3,7 +3,7 @@ currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentfram
 sys.path.append('..')
 import librosa
 import tensorflow as tf
-from tensorflow.keras.models import model_from_json
+from tensorflow.keras.models import model_from_json   # type: ignore
 from data_tools import scaled_in, inv_scaled_ou
 from data_tools import audio_files_to_numpy, numpy_audio_to_matrix_spectrogram, matrix_spectrogram_to_numpy_audio
 
