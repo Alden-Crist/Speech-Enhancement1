@@ -1,12 +1,3 @@
-import os
-import librosa
-from data_tools import audio_files_to_numpy
-from data_tools import blend_noise_randomly, numpy_audio_to_matrix_spectrogram
-import numpy as np
-import soundfile as sf
-
-
-
 # def create_data(noise_dir, voice_dir, path_save_time_serie, path_save_sound, path_save_spectrogram, sample_rate,
 # min_duration, frame_length, hop_length_frame, hop_length_frame_noise, nb_samples, n_fft, hop_length_fft):
 #     """This function will randomly blend some clean voices from voice_dir with some noises from noise_dir
@@ -87,6 +78,12 @@ import soundfile as sf
 #         np.save(path_save_spectrogram + 'voice_pha_db', m_pha_voice)
 #         np.save(path_save_spectrogram + 'noise_pha_db', m_pha_noise)
 #         np.save(path_save_spectrogram + 'noisy_voice_pha_db', m_pha_noisy_voice)
+
+import os
+from data_tools import audio_files_to_numpy
+from data_tools import blend_noise_randomly, numpy_audio_to_matrix_spectrogram
+import numpy as np
+import soundfile as sf
 
 
 def create_data(noise_dir, voice_dir, path_save_time_serie, path_save_sound, path_save_spectrogram, sample_rate,

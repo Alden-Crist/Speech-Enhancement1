@@ -22,7 +22,7 @@ parser.add_argument('--path_save_time_serie', default='/Users/alden/OneDrive/Des
 parser.add_argument('--path_save_sound', default='/Users/alden/OneDrive/Desktop/Data/Train/sound/', type=str)  #edited the path //////////////////
 
 
-#How much frame to create in data_creation mode
+#How much frame to create in data_creation mode  edited previous it was 50
 parser.add_argument('--nb_samples', default=40000, type=int)
 
 
@@ -50,23 +50,30 @@ parser.add_argument('--name_model', default='model_best', type=str)
 #directory where read noisy sound to denoise (prediction mode)
 parser.add_argument('--audio_dir_prediction', default='./demo_data/test', type=str)
 
-
 #directory to save the denoise sound (prediction mode)
 parser.add_argument('--dir_save_prediction', default='./demo_data/save_predictions/', type=str)
+
 #Noisy sound file to denoise (prediction mode)
 parser.add_argument('--audio_input_prediction', default=['noisy_voice_long_t2.wav'], type=list)
+
 #File name of sound output of denoise prediction
 parser.add_argument('--audio_output_prediction', default='denoise_t2.wav', type=str)
+
 # Sample rate chosen to read audio
 parser.add_argument('--sample_rate', default=8000, type=int)
+
 # Minimum duration of audio files to consider
 parser.add_argument('--min_duration', default=1.0, type=float)
+
 # Training data will be frame of slightly above 1 second
 parser.add_argument('--frame_length', default=8064, type=int)
+
 # hop length for clean voice files separation (no overlap)
 parser.add_argument('--hop_length_frame', default=8064, type=int)
+
 # hop length for noise files to blend (noise is splitted into several windows)
 parser.add_argument('--hop_length_frame_noise', default=5000, type=int)
+
 # Choosing n_fft and hop_length_fft to have squared spectrograms
 parser.add_argument('--n_fft', default=255, type=int)
 
