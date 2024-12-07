@@ -13,7 +13,6 @@ parser.add_argument('--noise_dir', default='/Users/alden/OneDrive/Desktop/Data/T
 
 parser.add_argument('--voice_dir', default='/Users/alden/OneDrive/Desktop/Data/Train/clean_voice/converted_wav_files', type=str) #edited the path///////
 
-
 #folders where to save spectrograms, time series and sounds for training / QC
 parser.add_argument('--path_save_spectrogram', default='/Users/alden/OneDrive/Desktop/Data/Train/spectrogram/', type=str) #edited the path ///////
 
