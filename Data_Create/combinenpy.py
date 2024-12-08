@@ -43,7 +43,7 @@ combine_batches(
     source_folder=source_folder,
     base_name="noisy_voice_amp_db_batch_",
     batch_start=0,
-    batch_end=39000,
+    batch_end=19000,
     batch_step=1000,
     output_file=os.path.join(source_folder, "noisy_voice_amp_db.npy")
 )
@@ -53,7 +53,7 @@ combine_batches(
     source_folder=source_folder,
     base_name="voice_amp_db_batch_",
     batch_start=0,
-    batch_end=39000,
+    batch_end=19000,
     batch_step=1000,
     output_file=os.path.join(source_folder, "voice_amp_db.npy")
 )
