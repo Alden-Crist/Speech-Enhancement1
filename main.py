@@ -22,6 +22,7 @@ if __name__ == '__main__':
         training_mode = True
     elif mode == 'data_creation':
         data_mode = True
+    
 
     if data_mode:
         #Example: python main.py --mode='data_creation'
