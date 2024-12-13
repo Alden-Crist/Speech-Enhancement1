@@ -35,7 +35,7 @@ def main():
 
     sess = load_session()
 
-    uploaded_file = st.file_uploader("Upload your audio/video:", type=SUPPORT_FORMAT)
+    uploaded_file = st.file_uploader("🎤Upload your audio/video:", type=SUPPORT_FORMAT)
 
     file_type = ''
     file_name = ''
@@ -130,3 +130,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
