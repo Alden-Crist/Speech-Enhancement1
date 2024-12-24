@@ -30,8 +30,8 @@ def save_uploadedfile(uploadedfile, file_type):
     process_input_format(filename, file_type)
 
 def main():
-    st.title(':musical_note: Audio Noise Reduction')
-    st.subheader('Remove your audio background noise using Artificial Intelligence')
+    st.title(':musical_note: Speech Enhancement')
+    st.subheader('Remove your audio background noise')
 
     sess = load_session()
 
@@ -64,7 +64,7 @@ def main():
 
         m_amp_db, m_pha, pred_amp_db, X_denoise = prediction(
                     weights_path="./Model",
-                    name_model="model_unet01",
+                    name_model="model584",
                     audio_dir_prediction=UPLOAD_FOLDER,
                     dir_save_prediction=UPLOAD_FOLDER,
                     audio_input_prediction=[file_name[:-3] + 'wav'],

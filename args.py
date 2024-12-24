@@ -8,7 +8,7 @@ parser.add_argument('--mode',default='prediction', type=str, choices=['data_crea
 
 
 #folders where to find noise audios and clean voice audio to prepare training dataset (mode data_creation)
-parser.add_argument('--noise_dir', default='/Users/alden/OneDrive/Desktop/Data/Train/noise', type=str)  #edited the path//////////////////////////
+parser.add_argument('--noise_dir', default='/Users/alden/OneDrive/Desktop/Data/Train/aug', type=str)  #edited the path//////////////////////////
 
 
 parser.add_argument('--voice_dir', default='/Users/alden/OneDrive/Desktop/Data/Train/clean_voice/converted_wav_files', type=str) #edited the path///////

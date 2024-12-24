@@ -1,4 +1,4 @@
-# Author: github.com/vbelz/Speech-enhancement
+
 from functools import reduce
 
 from librosa.core.spectrum import stft
