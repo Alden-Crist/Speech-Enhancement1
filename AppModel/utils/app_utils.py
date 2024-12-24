@@ -1,10 +1,10 @@
 
-from functools import reduce
+#from functools import reduce
 
-from librosa.core.spectrum import stft
+#from librosa.core.spectrum import stft
 
-import torch
-from torchvision import transforms
+#import torch
+ #from torchvision import transforms
 from config import *
 import os
 import librosa

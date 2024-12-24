@@ -9,7 +9,7 @@ import moviepy.editor as mp
 # Move st.set_page_config to the top before any other Streamlit commands
 st.set_page_config(
     page_title="Noise Reduction",
-    page_icon="🤖",
+    page_icon="📢",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
