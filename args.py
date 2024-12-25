@@ -2,31 +2,27 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Speech enhancement,data creation, training and prediction')
 
-
 #mode to run the program (options: data creation, training or prediction)
 parser.add_argument('--mode',default='prediction', type=str, choices=['data_creation', 'training', 'prediction'])
 
 
 #folders where to find noise audios and clean voice audio to prepare training dataset (mode data_creation)
-parser.add_argument('--noise_dir', default='/Users/alden/OneDrive/Desktop/Data/Train/aug', type=str)  #edited the path//////////////////////////
+parser.add_argument('--noise_dir', default='/Users/alden/OneDrive/Desktop/Data/Train/aug', type=str) 
 
-
-parser.add_argument('--voice_dir', default='/Users/alden/OneDrive/Desktop/Data/Train/clean_voice/converted_wav_files', type=str) #edited the path///////
+parser.add_argument('--voice_dir', default='/Users/alden/OneDrive/Desktop/Data/Train/clean_voice/converted_wav_files', type=str) 
 
 #folders where to save spectrograms, time series and sounds for training / QC
-parser.add_argument('--path_save_spectrogram', default='/Users/alden/OneDrive/Desktop/Data/Train/spectrogram/', type=str) #edited the path ///////
+parser.add_argument('--path_save_spectrogram', default='/Users/alden/OneDrive/Desktop/Data/Train/spectrogram/', type=str) 
 
-parser.add_argument('--path_save_time_serie', default='/Users/alden/OneDrive/Desktop/Data/Train/time_serie/', type=str) #edited the path /////////
+parser.add_argument('--path_save_time_serie', default='/Users/alden/OneDrive/Desktop/Data/Train/time_serie/', type=str) 
 
-parser.add_argument('--path_save_sound', default='/Users/alden/OneDrive/Desktop/Data/Train/sound/', type=str)  #edited the path //////////////////
+parser.add_argument('--path_save_sound', default='/Users/alden/OneDrive/Desktop/Data/Train/sound/', type=str) 
 
 #How much frame to create in data_creation mode  edited previous it was 50
 parser.add_argument('--nb_samples', default=20000, type=int)
 
-
 #Training from scratch or pre-trained weights
 parser.add_argument('--training_from_scratch',default=True, type=bool)
-
 
 #folder of saved weights
 parser.add_argument('--weights_folder', default='./Model', type=str)
@@ -52,7 +48,7 @@ parser.add_argument('--audio_dir_prediction', default='./demo_data/test', type=s
 parser.add_argument('--dir_save_prediction', default='./demo_data/save_predictions/', type=str)
 
 #Noisy sound file to denoise (prediction mode)
-parser.add_argument('--audio_input_prediction', default=['noice_test.wav'], type=list)
+parser.add_argument('--audio_input_prediction', default=['noisy_vaccum.wav'], type=list)
 
 #File name of sound output of denoise prediction
 parser.add_argument('--audio_output_prediction', default='denoise_t2.wav', type=str)

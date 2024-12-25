@@ -1,5 +1,3 @@
-import numpy as np
-from tensorflow import keras
 from tensorflow.keras.models import Model # type: ignore
 from tensorflow.keras.layers import Input, Conv2D, LeakyReLU, MaxPooling2D, Dropout, concatenate, UpSampling2D  # type: ignore
 from tensorflow.keras.optimizers import Adam # type: ignore

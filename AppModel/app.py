@@ -64,7 +64,7 @@ def main():
 
         m_amp_db, m_pha, pred_amp_db, X_denoise = prediction(
                     weights_path="./Model",
-                    name_model="model584",
+                    name_model="model_unet01",
                     audio_dir_prediction=UPLOAD_FOLDER,
                     dir_save_prediction=UPLOAD_FOLDER,
                     audio_input_prediction=[file_name[:-3] + 'wav'],
