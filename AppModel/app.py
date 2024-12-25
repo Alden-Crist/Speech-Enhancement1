@@ -66,7 +66,7 @@ def main():
                     weights_path="./Model",
                     name_model="model_unet01",
                     audio_dir_prediction=UPLOAD_FOLDER,
-                    dir_save_prediction=UPLOAD_FOLDER,
+                    dir_save_prediction=SAVE_FOLDER,
                     audio_input_prediction=[file_name[:-3] + 'wav'],
                     audio_output_prediction="out_" + file_name[:-3] + 'wav',
                     sample_rate=SAMPLE_RATE,
@@ -84,18 +84,18 @@ def main():
     if is_success:
         if 'audio' in uploaded_file.type:
             out_wav = file_name[:-3] + 'wav'
-            out_audio_file = open(os.path.join(UPLOAD_FOLDER, f'out_{out_wav}'), 'rb')
+            out_audio_file = open(os.path.join(SAVE_FOLDER, f'out_{out_wav}'), 'rb')
             out_audio_bytes = out_audio_file.read()
             st.header(':musical_note: Your processed audio/video')
             st.audio(out_audio_bytes, format='audio/wav')
 
         elif 'video' in uploaded_file.type:
             origin_vid = mp.VideoFileClip(os.path.join(UPLOAD_FOLDER, file_name))
-            processed_audio = mp.AudioFileClip(os.path.join(UPLOAD_FOLDER, f'out_{file_name[:-4]}.wav'))
+            processed_audio = mp.AudioFileClip(os.path.join(SAVE_FOLDER, f'out_{file_name[:-4]}.wav'))
             processed_vid = origin_vid.set_audio(processed_audio)
-            processed_vid.write_videofile(UPLOAD_FOLDER + f'out_{file_name[:-4]}.mp4')
+            processed_vid.write_videofile(SAVE_FOLDER + f'out_{file_name[:-4]}.mp4')
 
-            out_audio_file = open(os.path.join(UPLOAD_FOLDER, f'out_{file_name[:-4]}.mp4'), 'rb')
+            out_audio_file = open(os.path.join(SAVE_FOLDER, f'out_{file_name[:-4]}.mp4'), 'rb')
             out_audio_bytes = out_audio_file.read()
             st.header(':musical_note: Your processed audio/video')
             st.video(out_audio_bytes, format='video/mp4')
@@ -107,8 +107,8 @@ def main():
         with my_expander1:
             st.subheader('Input detail')
             col1, col2 = st.columns([1,1])
-            noisy_spec = Image.open(os.path.join(UPLOAD_FOLDER, 'noisy_spec.png'))
-            noisy_time_serie = Image.open(os.path.join(UPLOAD_FOLDER, 'noisy_time_serie.png'))
+            noisy_spec = Image.open(os.path.join(SPEC_FOLDER, 'noisy_spec.png'))
+            noisy_time_serie = Image.open(os.path.join(SPEC_FOLDER, 'noisy_time_serie.png'))
             col1.image(noisy_time_serie)
             col2.image(noisy_spec)
 
@@ -123,8 +123,8 @@ def main():
         with my_expander3:
             st.subheader('Clean noise speech')
             col1, col2 = st.columns([1,1])
-            out_spec = Image.open(os.path.join(UPLOAD_FOLDER, 'out_spec.png'))
-            out_time_serie = Image.open(os.path.join(UPLOAD_FOLDER, 'out_time_serie.png'))
+            out_spec = Image.open(os.path.join(SPEC_FOLDER, 'out_spec.png'))
+            out_time_serie = Image.open(os.path.join(SPEC_FOLDER, 'out_time_serie.png'))
             col1.image(out_time_serie)
             col2.image(out_spec)
 

@@ -1,10 +1,3 @@
-
-#from functools import reduce
-
-#from librosa.core.spectrum import stft
-
-#import torch
- #from torchvision import transforms
 from config import *
 import os
 import librosa
@@ -16,10 +9,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import moviepy.editor as mp
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-
-
 from tensorflow.keras.models import load_model   # type: ignore
-
 
 
 def process_input_format(file_name, file_type):
@@ -253,7 +243,7 @@ def plot_spectrogram(stftaudio_magnitude_db, name, sample_rate=SAMPLE_RATE, hop_
                              sr=sample_rate, hop_length=hop_length_fft)
     plt.colorbar(p, ax=ax)
 
-    fig.savefig(UPLOAD_FOLDER+name, pad_inches=0)
+    fig.savefig(SPEC_FOLDER+name, pad_inches=0)
     return 
 
 def plot_time_serie(audio_path, name, sample_rate=SAMPLE_RATE):
@@ -266,7 +256,7 @@ def plot_time_serie(audio_path, name, sample_rate=SAMPLE_RATE):
 
     p = librosa.display.waveshow(audio, sr=sr, ax=ax)
 
-    fig.savefig(UPLOAD_FOLDER+name, pad_inches=0)
+    fig.savefig(SPEC_FOLDER+name, pad_inches=0)
     return 
 
 def analyst_result(filename, m_amp_db, m_pha, pred_amp_db, X_denoise):  
@@ -289,6 +279,6 @@ def analyst_result(filename, m_amp_db, m_pha, pred_amp_db, X_denoise):
 
     # output analyst
     plot_spectrogram(X_denoise, 'out_spec.png')
-    plot_time_serie(UPLOAD_FOLDER+'out_'+filename, 'out_time_serie.png')
+    plot_time_serie(SAVE_FOLDER+'out_'+filename, 'out_time_serie.png')
     
     return

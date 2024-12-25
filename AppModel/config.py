@@ -1,11 +1,15 @@
 # Data config =======
 
 UPLOAD_FOLDER   = './uploads/'
+SAVE_FOLDER   =   './outputs/'
+SPEC_FOLDER  = './spectrograms/'
+
+
 SUPPORT_FORMAT  = ['mp3', 'mp4', 'wav']
 
-NOISE_DOMAINS   = ['vacuum_cleaner', 'clapping', 'fireworks', 'door_wood_knock', 'engine', 'mouse_click', 
-                    'clock_alarm', 'wind', 'keyboard_typing', 'footsteps', 'car_horn', 'drinking_sipping', 'snoring', 
-                    'breathing', 'toilet_flush', 'clock_tick', 'washing_machine', 'rain', 'rooster', 'laughing']
+NOISE_DOMAINS   = ['vacuum_cleaner', 'clapping','train','wind','snoring','glass-breaking','car-horn' 
+                    'clock_alarm', 'wind', 'keyboard_typing',  'car_horn' , 'church bells', 
+                    'breathing',  'clock_tick',  'rain']
 
 
 # Speech config =====
