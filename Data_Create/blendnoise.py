@@ -57,9 +57,9 @@ def mix_background_noise(voice_folder, noise_folder, output_folder, noise_ratio=
         print(f"Mixed audio saved to: {output_file}")
 
 # Directory paths
-voice_folder = "C:/Users/alden/OneDrive/Desktop/major_project1/Data_Create/voice/"
-noise_folder = "C:/Users/alden/OneDrive/Desktop/major_project1/Data_Create/noise/"
-output_folder = "C:/Users/alden/OneDrive/Desktop/major_project1/Data_Create/output/"
+voice_folder = "C:/Users/alden/OneDrive/Desktop/major_project/Data_Create/voice/"
+noise_folder = "C:/Users/alden/OneDrive/Desktop/major_project/Data_Create/noise/"
+output_folder = "C:/Users/alden/OneDrive/Desktop/major_project/Data_Create/output/"
 
 # Ensure the output folder exists
 os.makedirs(output_folder, exist_ok=True)

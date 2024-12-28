@@ -37,23 +37,23 @@ def combine_batches(source_folder, base_name, batch_start, batch_end, batch_step
 
 # Define parameters
 source_folder = '/Users/alden/OneDrive/Desktop/Data/Train/spectrogram'
-
+output_folder ='/Users/alden/OneDrive/Desktop/Data/Train/spectrogram_data'
 # Combine noisy voice files
 combine_batches(
     source_folder=source_folder,
     base_name="noisy_voice_amp_db_batch_",
-    batch_start=0,
-    batch_end=19000,
+    batch_start=20000,
+    batch_end=39000,
     batch_step=1000,
-    output_file=os.path.join(source_folder, "noisy_voice_amp_db.npy")
+    output_file=os.path.join(output_folder, "noisy_voice_amp_db2.npy")
 )
 
 # Combine clean voice files
 combine_batches(
     source_folder=source_folder,
     base_name="voice_amp_db_batch_",
-    batch_start=0,
-    batch_end=19000,
+    batch_start=20000,
+    batch_end=39000,
     batch_step=1000,
-    output_file=os.path.join(source_folder, "voice_amp_db.npy")
+    output_file=os.path.join(output_folder, "voice_amp_db2.npy")
 )

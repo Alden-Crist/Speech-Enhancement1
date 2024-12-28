@@ -112,12 +112,12 @@ def main():
             col1.image(noisy_time_serie)
             col2.image(noisy_spec)
 
-        # my_expander2 = st.expander('Noise detail')
-        # with my_expander2:
-        #     st.subheader('Noise prediction')
-        #     col1, col2 = st.columns([1,1])
-        #     noise_spec = Image.open(os.path.join(UPLOAD_FOLDER, 'noise_spec.png'))
-        #     col2.image(noise_spec)
+        my_expander2 = st.expander('Noise detail')
+        with my_expander2:
+            st.subheader('Noise prediction')
+            col1, col2 = st.columns([1,1])
+            noise_spec = Image.open(os.path.join(SPEC_FOLDER, 'noise_spec.png'))
+            col2.image(noise_spec)
             
         my_expander3 = st.expander('Output detail')
         with my_expander3:

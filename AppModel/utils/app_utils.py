@@ -246,6 +246,11 @@ def plot_spectrogram(stftaudio_magnitude_db, name, sample_rate=SAMPLE_RATE, hop_
     fig.savefig(SPEC_FOLDER+name, pad_inches=0)
     return 
 
+
+
+
+
+
 def plot_time_serie(audio_path, name, sample_rate=SAMPLE_RATE):
     """This function plots the audio as a time serie"""
     audio, sr = librosa.load(audio_path, sr=SAMPLE_RATE)
@@ -259,26 +264,25 @@ def plot_time_serie(audio_path, name, sample_rate=SAMPLE_RATE):
     fig.savefig(SPEC_FOLDER+name, pad_inches=0)
     return 
 
+
+
+
 def analyst_result(filename, m_amp_db, m_pha, pred_amp_db, X_denoise):  
     # noisy analyst
     plot_spectrogram(m_amp_db, 'noisy_spec.png')
     plot_time_serie(UPLOAD_FOLDER+filename, 'noisy_time_serie.png')
-    # dir_save_prediction=UPLOAD_FOLDER
-    # audio_output_prediction="output_" + filename[:-3] + 'wav'
-
-    # # recreate noise + noise analyst
-    # plot_spectrogram(pred_amp_db, 'noise_spec.png')
-    # noise_audio = matrix_spectrogram_to_numpy_audio(pred_amp_db, m_pha, FRAME_LENGTH, HOP_LENGTH_FFT)
-    # noise_audio = matrix_spectrogram_to_numpy_audio(pred_amp_db, m_pha, FRAME_LENGTH, HOP_LENGTH_FFT)
-    # # Number of frames
-    # nb_samples = noise_audio.shape[0]
-    # # Save all frames in one file
-    # noise_long = noise_audio.reshape(1, nb_samples * FRAME_LENGTH) * 10
-    # sf.write(dir_save_prediction + audio_output_prediction, noise_long[0, :], SAMPLE_RATE)
-
+    #dir_save_prediction=UPLOAD_FOLDER
+    #audio_output_prediction="output_" + filename[:-3] + 'wav'
+    
+    # recreate noise + noise analyst
+    
+    if pred_amp_db.ndim == 4:
+        pred_amp_db = pred_amp_db.squeeze(axis=-1)
+    plot_spectrogram(pred_amp_db, 'noise_spec.png')
 
     # output analyst
     plot_spectrogram(X_denoise, 'out_spec.png')
     plot_time_serie(SAVE_FOLDER+'out_'+filename, 'out_time_serie.png')
     
     return
+

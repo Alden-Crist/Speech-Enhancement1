@@ -5,9 +5,8 @@ parser = argparse.ArgumentParser(description='Speech enhancement,data creation, 
 #mode to run the program (options: data creation, training or prediction)
 parser.add_argument('--mode',default='prediction', type=str, choices=['data_creation', 'training', 'prediction'])
 
-
 #folders where to find noise audios and clean voice audio to prepare training dataset (mode data_creation)
-parser.add_argument('--noise_dir', default='/Users/alden/OneDrive/Desktop/Data/Train/aug', type=str) 
+parser.add_argument('--noise_dir', default='/Users/alden/OneDrive/Desktop/Data/Train/noise1600', type=str) 
 
 parser.add_argument('--voice_dir', default='/Users/alden/OneDrive/Desktop/Data/Train/clean_voice/converted_wav_files', type=str) 
 
@@ -19,7 +18,7 @@ parser.add_argument('--path_save_time_serie', default='/Users/alden/OneDrive/Des
 parser.add_argument('--path_save_sound', default='/Users/alden/OneDrive/Desktop/Data/Train/sound/', type=str) 
 
 #How much frame to create in data_creation mode  edited previous it was 50
-parser.add_argument('--nb_samples', default=20000, type=int)
+parser.add_argument('--nb_samples', default=40000, type=int)
 
 #Training from scratch or pre-trained weights
 parser.add_argument('--training_from_scratch',default=True, type=bool)
