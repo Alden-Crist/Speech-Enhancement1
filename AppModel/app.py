@@ -8,7 +8,7 @@ import moviepy.editor as mp
 
 # Move st.set_page_config to the top before any other Streamlit commands
 st.set_page_config(
-    page_title="Noise Reduction",
+    page_title="Speech Enhancement",
     page_icon="📢",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -64,7 +64,7 @@ def main():
 
         m_amp_db, m_pha, pred_amp_db, X_denoise = prediction(
                     weights_path="./Model",
-                    name_model="model_unet01",
+                    name_model="model_unet40000",
                     audio_dir_prediction=UPLOAD_FOLDER,
                     dir_save_prediction=SAVE_FOLDER,
                     audio_input_prediction=[file_name[:-3] + 'wav'],
